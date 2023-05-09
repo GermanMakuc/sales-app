@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "5652eaa2-5453-4098-b598-ca56f6af80ec",
+		"name": "Api Haulmer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8547023"
+	},
+	"item": [
+		{
+			"name": "Agregar Comercios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/commerce/create?rut=&name=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"commerce",
+						"create"
+					],
+					"query": [
+						{
+							"key": "rut",
+							"value": "",
+							"description": "Rut comercio"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"description": "Nombre comercio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Comercios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/commerce/update/1?rut=&name=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"commerce",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "rut",
+							"value": ""
+						},
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Comercios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/commerce/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"commerce",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Comercios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/commerce/delete/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"commerce",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/device/create?commerce_id=&name&model&ip",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"device",
+						"create"
+					],
+					"query": [
+						{
+							"key": "commerce_id",
+							"value": ""
+						},
+						{
+							"key": "name",
+							"value": null
+						},
+						{
+							"key": "model",
+							"value": null
+						},
+						{
+							"key": "ip",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/device/update/1?name=&model=&ip=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"device",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						},
+						{
+							"key": "model",
+							"value": ""
+						},
+						{
+							"key": "ip",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar dispositivos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/device/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"device",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/device/delete/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"device",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/sale/create?device_id=&payment=&status=&amount=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"sale",
+						"create"
+					],
+					"query": [
+						{
+							"key": "device_id",
+							"value": ""
+						},
+						{
+							"key": "payment",
+							"value": "",
+							"description": "Valores Permitidos: 'DEBITO','CREDITO', 'EFECTIVO'"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"description": "Valores Permitidos: 'ACEPTADA','ANULADA'"
+						},
+						{
+							"key": "amount",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Anular Venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/sale/cancel?id=&cod=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"sale",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "cod",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda pot tipo de pago",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/search/searchByPayment?payment=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"search",
+						"searchByPayment"
+					],
+					"query": [
+						{
+							"key": "payment",
+							"value": "",
+							"description": "Valores Permitidos: 'DEBITO','CREDITO', 'EFECTIVO'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda por estado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/search/searchByStatus?status=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"search",
+						"searchByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "",
+							"description": "Valores Permitidos: 'ACEPTADA','ANULADA'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda entre fechas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/search/searchByDates?start=&end=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"search",
+						"searchByDates"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "",
+							"description": "Formato: Y-m-d"
+						},
+						{
+							"key": "end",
+							"value": "",
+							"description": "Formato: Y-m-d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
