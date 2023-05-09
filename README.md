@@ -1,66 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Modelo de la base de datos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Screenshot](extra/Haulmer.png)
 
-## About Laravel
+# Primeros pasos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Para el funcionamiento de la aplicación se requiere ingresar datos en primera instancia, para las tablas de "Comercio" y "Dispositivos", para así poder realizar una venta, cada enpoint está especificado por medio de un collection realizado en POSTMAN en la siguiente ruta:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```
+extra/Api Haulmer.postman_collection.json
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Tanto para las tablas de Comercio y Dispositivo se puede Insertar, modificar e eliminar por medio de sus respectivos endpoints, también por medio del collection se puede ver los parámetros aceptados, como se puede apreciar hay campos agregados que consideré pertinente para el caso tales como: 
 
-## Learning Laravel
+En ventas se añadió el tipo de pago los cuáles sólo pueden ser: DEBITO,CREDITO,EFECTIVO
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+En ventas se añadió el campo estado los cuáles sólo pueden ser: ACEPTADA,ANULADA
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Funcionamiento 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Parte al ingresar un Comercio y crear un dispositivo vinculado a un comercio, se puede generar una venta, el cual recibe como parámetros el id del dispositivo, el tipo de pago mencionado anteriormente el estado y el monto, posterior se genera el código el cuál se realiza por medio de un hash que utiliza el id de la venta como parámetro y se almacena
 
-## Laravel Sponsors
+El proceso de anulado recibe como parámetro el id de la venta más el cod el cuál es el hash guardado anteriormente, se valida sí la venta que está recibiendo esta anulada y verifica sí el id de la venta más el hash coinciden, sí es correcto modifica el estado por anulado
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Funcionalidad Extra / Mejoras
 
-### Premium Partners
+Las mejoras fueron agregar campos que consideré necesario más la funcionalidad de realizar búsquedas de ventas en 3 endpoints diferentes
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+1) El primer endpoint permite buscar ventas por medio del tipo de pago, es decir permite la entrada de DEBITO,CREDITO,EFECTIVO
+2) El segundo es similar al anterior pero esta vez realiza una búsqueda con el estado de la venta, es decir permite la entra de los estados: ACEPTADA,ANULADA
+3) Y el tercero permite buscar ventas entre rangos de fecha, es decir utiliza una fecha de inicio y una fecha de termino, devolviendo las ventas que estén DENTRO del rango de esas fechas
+```
