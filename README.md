@@ -18,9 +18,9 @@ En ventas se añadió el campo estado los cuáles sólo pueden ser: ACEPTADA,ANU
 
 # Funcionamiento 
 
-Parte al ingresar un Comercio y crear un dispositivo vinculado a un comercio, se puede generar una venta, el cual recibe como parámetros el id del dispositivo, el tipo de pago mencionado anteriormente el estado y el monto, posterior se genera el código el cuál se realiza por medio de un hash que utiliza el id de la venta como parámetro y se almacena
+Parte al ingresar un Comercio y crear un dispositivo vinculado a un comercio, se puede generar una venta, el cual recibe como parámetros el id del dispositivo, el tipo de pago mencionado anteriormente el estado y el monto, posterior se genera el código el cuál se realiza por medio de un hash que utiliza el id de la venta como parámetro, se almacena y realiza el descuento al comercio en puntos.
 
-El proceso de anulado recibe como parámetro el id de la venta más el cod el cuál es el hash guardado anteriormente, se valida sí la venta que está recibiendo esta anulada y verifica sí el id de la venta más el hash coinciden, sí es correcto modifica el estado por anulado
+El proceso de anulado recibe como parámetro el id de la venta más el cod el cuál es el hash guardado anteriormente, se valida sí la venta que está recibiendo esta anulada y verifica sí el id de la venta más el hash coinciden, sí es correcto modifica el estado por anulado y realiza el descuento de los puntos al comercio.
 
 # Funcionalidad Extra / Mejoras
 
